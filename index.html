@@ -1,0 +1,138 @@
+<html>
+<head>
+
+  <title>Spartan Gym</title>
+  
+  <link rel="stylesheet" href="style.css">  
+
+</head>
+<body> 
+
+ <nav>
+   <ul>
+     <li><a>Join Now</a></li>
+	 <li><a>Why Spartan Gym</a></li>
+	 <li><a>Location</a></li>
+	 <li><a>Contact Us</a></li>
+   </ul>
+ </nav>
+ 
+<br>
+<br>
+<br>
+
+ <div id="logo">
+  <img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1763655/580/379/m1/fpnw/wm0/1-.png?1476531273&s=820add28413b3a80aa9fa08b6891bd43">
+ </div>
+ 
+ <div class="wrap">
+   <div id="arrow-left" class="arrow"></div>
+     <div id="slider">
+	 
+	  <div class="slide slide1">
+	   <div class="slide-content">
+	    <span>LOOK GOOD, FEEL GOOD, GET RESULTS</span>
+	   </div>
+	  </div>
+	  
+	   <div class="slide slide2">
+	   <div class="slide-content">
+	    <span>MAKE HEALTH YOUR NEW YEARS RESOLUTION</span>
+	   </div>
+	  </div>
+	  
+	   <div class="slide slide3">
+	   <div class="slide-content">
+	    <span>PAY £0 JOINING FEE</span>
+	   </div>
+	  </div>
+	  
+	 </div>
+   <div id="arrow-right" class="arrow"></div>
+ </div>
+ 
+ 
+ <div class="section">
+   <img src="http://www.miami.com/wp-content/uploads/sites/2/2017/03/16299403_1346410658714468_1384364511123907683_n.jpg">
+   <p>Find a club near you and gain access to over 2,000 
+   locations worldwide.</p>
+  </div>
+
+  <div class="section"> 
+   <img src="https://www.ahotellife.com/wp-content/uploads/2017/09/1-HOTEL-SOUTH-BEACH_MIAM_FLORIDA_SUSTAINABLE-HOTEL_A-HOTEL-LIFE_GYM2.jpg">
+   <p>Want to try befor you buy? No problem! Check out 
+   your local club with a free trial pass.</p>
+  </div>
+  
+  <div class="section">
+   <img src="https://sorabelle.com/wp-content/uploads/2017/04/spartan-gym.jpg">
+    <p>Spartan Fitness is dedicated to changing lives through a results-
+	driven culture in each of our locations.</p>
+ </div>
+ 
+ <div class="pimg">
+  <div class="SP">
+   <h1>Why Spartan Fitness?</h1>
+   <p>Still not convinced Spartan Gym is for you?</p>
+   <p><button>Learn More</button></p>
+  </div>
+ </div>
+
+<footer>
+  <ul>
+    <li>COMPANY INFO</li>
+	<li>GYM INFO</li>
+	<li>MEMBERS</li>
+	<li>FRANCHISE</li>
+  </ul>
+  
+</footer>
+
+<script>
+    let sliderImages = document.querySelectorAll('.slide'),
+        arrowLeft =document.querySelector('#arrow-left'),
+        arrowRight =document.querySelector('#arrow-Right'),
+		current = 0;
+		
+	function reset(){
+	   for(let i =0; i < sliderImages.length; i++){
+	     sliderImages[i].style.display = 'none';
+	   }
+	}
+	
+	function startSlide(){
+	  reset();
+	  sliderImages[0].style.display = 'block';
+	}
+	
+	function slideLeft(){
+	  reset();
+	  sliderImages[current - 1].style.display = 'block';
+	  current--;
+	}
+	
+	function slideRight(){
+	  reset();
+	  sliderImages[current + 1].style.display = 'block';
+	  current++;
+	}
+	
+	arrowLeft.addEventListener('click', function(){
+	  if(current === 0){
+	    current = sliderImages.length;
+	  }
+	  slideLeft();
+	})
+	
+	arrowRight.addEventListener('click', function(){
+	  if(current === sliderImages.length - 1){
+	    current = -1;
+	  }
+	  slideRight();
+	})
+	
+	startSlide();
+  </script>
+
+</body>
+</html>
